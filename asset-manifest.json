@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fun-with-amcharts/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/fun-with-amcharts/static/js/main.8d373fe6.chunk.js",
+    "main.js.map": "/fun-with-amcharts/static/js/main.8d373fe6.chunk.js.map",
+    "runtime~main.js": "/fun-with-amcharts/static/js/runtime~main.9bbac6ff.js",
+    "runtime~main.js.map": "/fun-with-amcharts/static/js/runtime~main.9bbac6ff.js.map",
+    "xlsx.js": "/fun-with-amcharts/static/js/xlsx.87cb59db.chunk.js",
+    "xlsx.js.map": "/fun-with-amcharts/static/js/xlsx.87cb59db.chunk.js.map",
+    "static/js/3.9fb4553d.chunk.js": "/fun-with-amcharts/static/js/3.9fb4553d.chunk.js",
+    "static/js/3.9fb4553d.chunk.js.map": "/fun-with-amcharts/static/js/3.9fb4553d.chunk.js.map",
+    "static/js/4.7a916e4a.chunk.js": "/fun-with-amcharts/static/js/4.7a916e4a.chunk.js",
+    "static/js/4.7a916e4a.chunk.js.map": "/fun-with-amcharts/static/js/4.7a916e4a.chunk.js.map",
+    "static/js/5.8c169cec.chunk.js": "/fun-with-amcharts/static/js/5.8c169cec.chunk.js",
+    "static/js/5.8c169cec.chunk.js.map": "/fun-with-amcharts/static/js/5.8c169cec.chunk.js.map",
+    "static/js/6.a4a9e6e1.chunk.js": "/fun-with-amcharts/static/js/6.a4a9e6e1.chunk.js",
+    "static/js/6.a4a9e6e1.chunk.js.map": "/fun-with-amcharts/static/js/6.a4a9e6e1.chunk.js.map",
+    "index.html": "/fun-with-amcharts/index.html",
+    "precache-manifest.2ec310b1b5baf1426a8298c781e68283.js": "/fun-with-amcharts/precache-manifest.2ec310b1b5baf1426a8298c781e68283.js",
+    "service-worker.js": "/fun-with-amcharts/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/fun-with-amcharts/static/css/main.5ecd60fb.chunk.css.map"
+  }
+}

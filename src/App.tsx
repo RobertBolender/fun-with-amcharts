@@ -1,46 +1,62 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
+import React, { Component } from "react";
 import logo from "./logo.svg";
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4charts from "@amcharts/amcharts4/charts";
+import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-const App: React.FC = () => {
-  return (
-    <Wrapper>
-      <Header>
-        <Logo src={logo} className="App-logo" alt="logo" />
-        <p>React + TypeScript + Styled Components</p>
-      </Header>
-    </Wrapper>
-  );
-};
+am4core.useTheme(am4themes_animated);
 
-const Wrapper = styled.div`
-  text-align: center;
-`;
+class App extends Component {
+  chart: am4charts.XYChart;
 
-const Header = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
+  componentDidMount() {
+    let chart = am4core.create("chartdiv", am4charts.XYChart);
 
-const LogoSpin = keyframes`
-  from {
-    transform: rotate(0deg);
+    chart.paddingRight = 20;
+
+    let data = [];
+    let visits = 10;
+    for (let i = 1; i < 366; i++) {
+      visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
+      data.push({
+        date: new Date(2018, 0, i),
+        name: "name" + i,
+        value: visits
+      });
+    }
+
+    chart.data = data;
+
+    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+    dateAxis.renderer.grid.template.location = 0;
+
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.tooltip.disabled = true;
+    valueAxis.renderer.minWidth = 35;
+
+    let series = chart.series.push(new am4charts.LineSeries());
+    series.dataFields.dateX = "date";
+    series.dataFields.valueY = "value";
+
+    series.tooltipText = "{valueY.value}";
+    chart.cursor = new am4charts.XYCursor();
+
+    let scrollbarX = new am4charts.XYChartScrollbar();
+    scrollbarX.series.push(series);
+    chart.scrollbarX = scrollbarX;
+
+    this.chart = chart;
   }
-  to {
-    transform: rotate(360deg);
-  }
-`;
 
-const Logo = styled.img`
-  animation: ${LogoSpin} infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-`;
+  componentWillUnmount() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  }
+
+  render() {
+    return <div id="chartdiv" style={{ width: "100%", height: "500px" }} />;
+  }
+}
 
 export default App;
